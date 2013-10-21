@@ -69,11 +69,24 @@ module.exports = function (grunt) {
                '// this file is the concatenation of several js files. See https://github.com/jimhigson/oboe-browser.js/tree/master/src ' +
                    'for the unconcatenated source\n' +
                // having a local undefined, window, Object etc allows slightly better minification:                    
-               'window.oboe = (function  (window, Object, Array, Error, undefined ) {\n'
+               '(function  (window, Object, Array, Error, undefined ) {\n'
                
-                              // source code here
+                  // source code here
                 
-            ,  '\n\n;return oboe;})(window, Object, Array, Error);'
+            ,     '\n\n;' +          
+            
+                  // borrowing heavily from jQuery's packaging here:
+                  'if ( typeof module === "object" && module && typeof module.exports === "object" ) {' +
+                     'module.exports = oboe;' + 
+                  '} else {' + 
+   
+                     'window.oboe = oboe;' +
+                  
+                     'if ( typeof define === "function" && define.amd ) {' +
+                        'define( "oboe", [], function () { return oboe; } );' +
+                     '}' +
+                  '}' +
+               '})(window, Object, Array, Error);'
             ]
          },
          
