@@ -75,10 +75,10 @@ module.exports = function (grunt) {
                 
             ,     '\n\n;' +          
                                   
-                  'window.oboe = oboe;' +
-               
                   'if ( typeof define === "function" && define.amd ) {' +
                      'define( "oboe", [], function () { return oboe; } );' +
+                  '} else {' +
+                     'window.oboe = oboe;' +
                   '}' +
                '})(window, Object, Array, Error);'
             ]
