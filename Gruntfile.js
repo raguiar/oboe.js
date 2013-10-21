@@ -74,17 +74,11 @@ module.exports = function (grunt) {
                   // source code here
                 
             ,     '\n\n;' +          
-            
-                  // borrowing heavily from jQuery's packaging here:
-                  'if ( typeof module === "object" && module && typeof module.exports === "object" ) {' +
-                     'module.exports = oboe;' + 
-                  '} else {' + 
-   
-                     'window.oboe = oboe;' +
-                  
-                     'if ( typeof define === "function" && define.amd ) {' +
-                        'define( "oboe", [], function () { return oboe; } );' +
-                     '}' +
+                                  
+                  'window.oboe = oboe;' +
+               
+                  'if ( typeof define === "function" && define.amd ) {' +
+                     'define( "oboe", [], function () { return oboe; } );' +
                   '}' +
                '})(window, Object, Array, Error);'
             ]
