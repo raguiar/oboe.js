@@ -2033,4 +2033,4 @@ function apiMethod(httpMethodName, mayHaveRequestBody) {
    };
 }   
 
-;if ( typeof module === "object" && module && typeof module.exports === "object" ) {module.exports = oboe;} else {window.oboe = oboe;if ( typeof define === "function" && define.amd ) {define( "oboe", [], function () { return jQuery; } );}}})(window, Object, Array, Error);
+;window.oboe = oboe;if ( typeof define === "function" && define.amd ) {define( "oboe", [], function () { return oboe; } );}})(window, Object, Array, Error);
