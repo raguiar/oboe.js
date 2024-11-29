@@ -1,6 +1,7 @@
 **Oboe.js** helps web applications respond quicker by wrapping http's request-response model
 with a progressively streamed interface.
 It glues a transport that sits 
+Acrescentar tb isto
 **somewhere between streaming and downloading** to a **JSON parser that sits somewhere between SAX and
 DOM**. It is small enough to be a [micro-library](http://microjs.com/#), doesn't have any external dependencies and 
 doesn't care which other libraries you need it to speak to.
